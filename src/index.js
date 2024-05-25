@@ -5,7 +5,7 @@ import { app } from "./app.js";
 
 dotenv.config();
 
-console.log(process.env.MONGODB_URI);
+// console.log(process.env.MONGODB_URI);
 connectDB()
         .then((result) => {
                 app.listen(process.env.PORT || 3300, () => {
