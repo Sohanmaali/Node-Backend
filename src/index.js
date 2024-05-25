@@ -5,19 +5,17 @@ import { app } from "./app.js";
 
 dotenv.config();
 
-// console.log(process.env.MONGODB_URI);
+//conectiong data base
 connectDB()
-        .then((result) => {
-                app.listen(process.env.PORT || 3300, () => {
-                        console.log(
-                                `Server is running at port : ${process.env.PORT}`
-                        );
-                });
-                console.log("DB Connected ", result);
-        })
-        .catch((err) => {
-                console.log("MognoDB Fail to connect !!!", err);
+    .then((result) => {
+        app.listen(process.env.PORT || 3300, () => {
+            console.log(`Server is running at port : ${process.env.PORT}`);
         });
+        console.log("DB Connected ");
+    })
+    .catch((err) => {
+        console.log("MognoDB Fail to connect !!!", err);
+    });
 
 /*
 import express from "express";
